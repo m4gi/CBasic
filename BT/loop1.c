@@ -10,7 +10,8 @@ int main(int argc, char const *argv[])
             if (!(n>10 && n<100)) 
                 {
                     printf("\n >> Ban nhap sai!\n");
-                }           
+                }    
+                       
         }
     while (n<10 || n>100);
     getch();

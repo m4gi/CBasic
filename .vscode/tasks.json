@@ -13,7 +13,7 @@
                 "-o",
                 "bin/${fileBasenameNoExtension}.exe"
             ],
-            "group":{
+            "group": {
                 "kind": "build",
                 "isDefault": true
             }

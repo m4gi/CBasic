@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "conio.h": "c",
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "math.h": "c",
+        "string.h": "c",
+        "SIMPLETENARY.C": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled",
+    "git.ignoreLimitWarning": true
+}
