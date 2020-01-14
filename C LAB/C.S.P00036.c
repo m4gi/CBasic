@@ -25,10 +25,10 @@ int main(int argc, char const *argv[])
 {
     char c, st[1000];
     int i;
-    int arr[256];
-    memset(arr, 0, sizeof(arr));
+    int arr[256]; 
     do
     {
+        memset(arr, 0, sizeof(arr));
         printf("Enter an string: ");
         gets(st);
         for (i = 0; i < strlen(st); i++)
@@ -37,7 +37,7 @@ int main(int argc, char const *argv[])
                 st[i] += 32;
         }
         for (i = 0; i < strlen(st); i++)
-        {
+        {   
             arr[st[i]] += 1;
         }
         for (char ch = 'a'; ch <= 'z'; ch++)
