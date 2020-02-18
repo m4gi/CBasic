@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <conio.h>
+#include <stdlib.h>
 #define max 100
 #define TRUE 1
 #define FALSE 0
