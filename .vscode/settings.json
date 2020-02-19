@@ -8,5 +8,6 @@
         "SIMPLETENARY.C": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "maven.view": "flat"
 }
