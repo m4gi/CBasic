@@ -5,11 +5,8 @@
 #define TRUE 1
 #define FALSE 0
 char *filename = "D:\\dictionary.txt";
-char ch[10];
-/*
-Tải dữ liệu từ file
-*/
-void loadData(char **ArrWord, int sizeOfArr)
+
+void loadData(char **ArrWord, int sizeOfArr)  //Tải dữ liệu từ file
 {
     FILE *f = fopen(filename, "r");
     if (f == NULL)
@@ -27,9 +24,10 @@ void loadData(char **ArrWord, int sizeOfArr)
     printf("Well to the Spell Checker!!\n");
     fclose(f);
 }
-/*Chuẩn hóa đầu vào*/
+
 void standardString(char string[])
 {
+    //Chuẩn hóa đầu vào
     int n = strlen(string);
     int i = 0, k = 0;
     char temp[30];
@@ -59,25 +57,9 @@ void standardString(char string[])
         string[strlen(string) - 1] = '\0';
     strlwr(string);
 }
-/*
-Lấy chuỗi và chuẩn hóa đầu vào rồi kiểm tra
-*/
-void getString(char **ArrWord, int sizeOfArr)
-{
-    char String[30] = "";
-    int num = 0;
-    printf("Please enter the word you would like checked.\n");
-    fflush(stdin);
-    gets(String);
-    standardString(String);
-    checkString(ArrWord, sizeOfArr, String);
-}
-
-/*
-Kiểm tra từ này có xuất hiện trong dictionary không
-*/
 int correctString(char **ArrWord, int sizeOfArr, char *String)
 {
+    //Kiểm tra từ này có xuất hiện trong dictionary không
     for (int i = 0; i < sizeOfArr; i++)
     {
         if (strcmp(ArrWord[i], String) == 0)
@@ -85,11 +67,9 @@ int correctString(char **ArrWord, int sizeOfArr, char *String)
     }
     return 0;
 }
-/*
-Kiểm tra có xuất hiện trong từ điển hay không nếu có thì in ra không đúng thì đưa ra các từ có liên quan
-*/
 void checkString(char **ArrWord, int sizeOfArr, char *String)
 {
+    //Kiểm tra có xuất hiện trong từ điển hay không nếu có thì in ra không đúng thì đưa ra các từ có liên quan
     int count = 0;
     if (correctString(ArrWord, sizeOfArr, String))
     {
@@ -100,6 +80,19 @@ void checkString(char **ArrWord, int sizeOfArr, char *String)
 
     // Chưa xong
 }
+
+void getString(char **ArrWord, int sizeOfArr)
+{
+    //Lấy chuỗi và chuẩn hóa đầu vào rồi kiểm tra
+    char String[30] = "";
+    int num = 0;
+    printf("Please enter the word you would like checked.\n");
+    fflush(stdin);
+    gets(String);
+    standardString(String);
+    checkString(ArrWord, sizeOfArr, String);
+}
+
 int Choice(char choice[])
 {
     char isTrue[10] = "yes";

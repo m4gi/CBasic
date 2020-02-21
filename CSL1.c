@@ -143,7 +143,7 @@ void checkString(char **ArrWord, int sizeOfArr, char *String)
     printf("Here are the possible words you could have meant:\n");
     for (int i = 0; i < sizeOfArr; i++)
     {
-        if (subsequence(String, ArrWord[i]) || permutation(String, ArrWord[i]) || substring(String, ArrWord[i]))
+        if (subsequence(String, ArrWord[i]) && permutation(String, ArrWord[i]) && substring(String, ArrWord[i]))
         {
             count++;
             printf("%s\n", ArrWord[i]);
