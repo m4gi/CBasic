@@ -3,7 +3,7 @@
 #include <conio.h>
 #include <string.h>
 #include <time.h>
-char *filename = "D:\\dictionary2.txt";
+char *filename = "D:\\dictionary.txt";
 void loadData(char **ArrWord, int sizeOfArr)
 {
     FILE *f = fopen(filename, "r");
@@ -23,7 +23,6 @@ void loadData(char **ArrWord, int sizeOfArr)
     fclose(f);
 }
 
-//chuan hoa dau vao
 void standardString(char string[])
 {
     int n = strlen(string);
@@ -69,19 +68,20 @@ int substring(char shortstr[], char longstr[])
     return 0;
 }
 
-//kiem tra 2phan tu dau cua chuoi giong trong tu dien k
+// kiem tra 2phan tu dau cua chuoi giong trong tu dien k
 int subsequence(char shortstr[], char longstr[])
 {
     char *d = shortstr;
     char *dEnd = shortstr + strlen(shortstr);
     for (; d < dEnd - 1; d++)
     {
-        char p[30] = "";
+        char p[5] = "";
         strncpy(p, d, 2);
-        char *temp = strstr(longstr, p);
-        if (temp != NULL)
+        char *tem = NULL;
+        tem = strstr(longstr, p);
+        if (tem != NULL)
         {
-            //free(temp);
+            free(tem);
             return 1;
         }
     }
@@ -134,7 +134,6 @@ int correctString(char **ArrWord, int sizeOfArr, char *String)
 
 void checkString(char **ArrWord, int sizeOfArr, char *String)
 {
-    int count = 0;
     if (correctString(ArrWord, sizeOfArr, String))
     {
         printf("Great, %s is in the dictionary!\n", String);
@@ -143,13 +142,10 @@ void checkString(char **ArrWord, int sizeOfArr, char *String)
     printf("Here are the possible words you could have meant:\n");
     for (int i = 0; i < sizeOfArr; i++)
     {
-        if (subsequence(String, ArrWord[i]) && permutation(String, ArrWord[i]) && substring(String, ArrWord[i]))
+        if ((subsequence(String, ArrWord[i]) || permutation(String, ArrWord[i]) || substring(String, ArrWord[i])) && (strlen(ArrWord[i]) <= strlen(String)))
         {
-            count++;
             printf("%s\n", ArrWord[i]);
         }
-        // if (count > 100)
-        //     return;
     }
 }
 
@@ -180,7 +176,7 @@ int getChoice(char choice[])
 int main()
 {
     char **ArrWord = NULL;
-    int sizeOfArr = 61336;
+    int sizeOfArr = 349900;
     ArrWord = (char **)malloc(sizeOfArr * sizeof(char *));
     for (int i = 0; i < sizeOfArr; i++)
         ArrWord[i] = (char *)malloc(30 * sizeof(char));

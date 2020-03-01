@@ -5,8 +5,7 @@
 #define TRUE 1
 #define FALSE 0
 char *filename = "D:\\dictionary.txt";
-
-void loadData(char **ArrWord, int sizeOfArr)  //Tải dữ liệu từ file
+void loadData(char **ArrWord, int sizeOfArr) //Tải dữ liệu từ file
 {
     FILE *f = fopen(filename, "r");
     if (f == NULL)
@@ -25,6 +24,70 @@ void loadData(char **ArrWord, int sizeOfArr)  //Tải dữ liệu từ file
     fclose(f);
 }
 
+int subsequence(char shortstr[], char longstr[])
+{
+    // Kiểm tra 2 phần tử đầu
+    char *d = shortstr;
+    char *dEnd = shortstr + strlen(shortstr);
+    char *temp;
+    for (; d < dEnd - 1; d++)
+    {
+        char p[5] = "";
+        strncpy(p, d, 2);
+        temp = strstr(longstr, p);
+        if (temp != NULL)
+        { 
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+
+int permutation(char string1[], char string2[])
+{
+    //Kiểm tra chuỗi đảo
+    int count = 0;
+    int n1 = strlen(string1);
+    int n2 = strlen(string2);
+    char s1[30] = "";
+    char s2[30] = "";
+    strcpy(s1, string1);
+    strcpy(s2, string2);
+    if (n1 == n2)
+    {
+        for (int i = 0; i < n1; i++)
+        {
+            for (int j = 0; j < n2; j++)
+            {
+                if (s1[i] == s2[j])
+                {
+                    count++;
+                    s2[j] = NULL;
+                    s1[i] = NULL;
+                    break;
+                }
+            }
+        }
+    }
+    if (count == n1)
+    {
+        return TRUE;
+    }
+    return FALSE;
+}
+int substring(char shortstr[], char longstr[])
+{
+    // Kiểm tra có phải chuỗi con
+    char *temp = NULL;
+    temp = strstr(longstr, shortstr);
+    if (temp != NULL)
+    {
+        free(temp);
+        return TRUE;
+    }
+    return FALSE;
+}
 void standardString(char string[])
 {
     //Chuẩn hóa đầu vào
@@ -63,9 +126,9 @@ int correctString(char **ArrWord, int sizeOfArr, char *String)
     for (int i = 0; i < sizeOfArr; i++)
     {
         if (strcmp(ArrWord[i], String) == 0)
-            return 1;
+            return TRUE;
     }
-    return 0;
+    return FALSE;
 }
 void checkString(char **ArrWord, int sizeOfArr, char *String)
 {
@@ -77,8 +140,13 @@ void checkString(char **ArrWord, int sizeOfArr, char *String)
         return;
     }
     printf("Here are the possible words you could have meant:\n");
-
-    // Chưa xong
+    for (int i = 0; i < sizeOfArr; i++)
+    {
+        if ((subsequence(String, ArrWord[i]) || permutation(String, ArrWord[i]) || substring(String, ArrWord[i])) && (strlen(ArrWord[i]) <= strlen(String)))
+        {
+            printf("%s\n", ArrWord[i]);
+        }
+    }
 }
 
 void getString(char **ArrWord, int sizeOfArr)
