@@ -1,0 +1,12 @@
+Smith was checked into room 0
+Owens was checked into room 1
+Davis was checked into room 2
+Owens was checked out of room 1
+Sorry, there is no occupant named Owens
+Smith is currently staying in room 0
+Sorry, there is no occupant named Owens
+Walsh was checked into room 1
+Name 		Room number 	    Number of occupants
+Smith           0               3                   
+Walsh           1               10                  
+Davis           2               7                   

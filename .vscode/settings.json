@@ -5,7 +5,8 @@
         "stdio.h": "c",
         "math.h": "c",
         "string.h": "c",
-        "SIMPLETENARY.C": "cpp"
+        "SIMPLETENARY.C": "cpp",
+        "LIST.C": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "git.ignoreLimitWarning": true,
