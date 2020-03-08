@@ -55,6 +55,7 @@ int main(int argc, char const *argv[])
     {
         t1 = clock();
         system("cls");
+        printf("\033[1;31m");
         printf("Welcome to MasterMind!!!\n\n");
         printf("At each turn you will enter your guess for the playing board.\n");
         printf("A valid guess ahs 4 values in between 0 and 5.\n");
