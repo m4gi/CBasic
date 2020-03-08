@@ -1,0 +1,5 @@
+       400	      Corn	0.890000       	C
+       100	    Salmon	7.990000       	M
+       200	   Bananas	1.580000       	P
+       500	    Dishes	3.450000       	N
+       300	      Milk	1.890000       	D
