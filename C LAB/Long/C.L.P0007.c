@@ -46,13 +46,13 @@ void displayGuess(int guessCode[4], int blackPeg, int whitePeg)
 int main(int argc, char const *argv[])
 {
     srand(time(NULL));
-    int i, turn = 0, blackPeg, whitePeg, wrongGuess;
+    int i, turn, blackPeg, whitePeg, wrongGuess;
     int secretCode[4], guessCode[4];
     char c;
-    double time_taken;
     clock_t t1, t2;
     do
     {
+        turn = 0;
         t1 = clock();
         system("cls");
         printf("\033[1;31m");
