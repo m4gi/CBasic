@@ -6,7 +6,9 @@
         "math.h": "c",
         "string.h": "c",
         "SIMPLETENARY.C": "cpp",
-        "LIST.C": "cpp"
+        "LIST.C": "cpp",
+        "cstdarg": "cpp",
+        "string": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "git.ignoreLimitWarning": true,

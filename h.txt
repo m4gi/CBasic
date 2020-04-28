@@ -1,5 +1,43 @@
-       400	      Corn	0.890000       	C
-       100	    Salmon	7.990000       	M
-       200	   Bananas	1.580000       	P
-       500	    Dishes	3.450000       	N
-       300	      Milk	1.890000       	D
+    for (int i = 0; i <= n; i++)
+    {
+        if (strcmp(logCode, ATM[i].Account) == 0)
+        {
+            if (amount > ATM[i].Balances)
+            {
+                printf("Not enough money to withdraw!\n");
+                return;
+            }
+            else
+            {
+                fprintf(saveWithdraw, "%-20s %-15s %-22lf %-11s %-29s\n", ATM[i].Account, ATM[i].AccName, amount, ATM[i].Type, time);
+                printf("Draw money successful!!\n");
+                return;
+            }
+        }
+    }
+    fclose(saveWithdraw);
+
+
+for (int i = 0; i <= n; i++)
+    {
+        if (strcmp(logCode, ATM[i].Account) == 0)
+        {
+            if (amount > ATM[i].Balances)
+            {
+                printf("Not enough money to withdraw!\n");
+                return;
+            }
+            else
+            {
+                for (int j = 0; i <= n; i++)
+                {
+                    if (strcmp(dest, tempAccount1) == 0)
+                    {
+                        fprintf(transfer, "%-20s %-15s %-20s %-15s %-22lf %-11s %-28s\n", ATM[i].Account, ATM[i].AccName, tempAccount1, tempName1, ATM[i].Balances, ATM[i].Type, time);
+                        printf("Transfer money successful!!\n");
+                        return;
+                    }
+                }
+            }
+        }
+    }
