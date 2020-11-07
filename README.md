@@ -5,7 +5,7 @@
 - Each assignment must be completed continuosly in the defined time.
 
 ## Contact: 
-- [FB]: (https://www.facebook.com/letuan7920)
+- [Link Facebook](https://www.facebook.com/letuan7920) 
 - Mail: tuanlade140280@fpt.edu.vn
 
 ```
